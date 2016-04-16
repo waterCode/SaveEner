@@ -1,0 +1,119 @@
+<resources>>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ios_button_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:button">@drawable/ios_button</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textOn"></item>
+        <item name="android:textOff"></item>
+    </style>
+
+    <style name="switch_style">
+        <item name="android:textSize">20dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center|start</item>
+    </style>
+
+    <style name="wifiImage_style">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="applce_name_style">
+        <item name="android:textSize">30dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center|start</item>
+    </style>
+
+    <style name="hoursShow">
+        <item name="android:textSize">25dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="smallLinear">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="energy_cal_text">
+        <item name="android:textSize">31dp</item>
+        <item name="android:textColor">#020202</item>
+    </style>
+
+    <style name="energy_cal_text2">
+        <item name="android:textSize">31dp</item>
+        <item name="android:textColor">#020202</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+    <style name="Energy_cal_small_Lin">
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="edit_acti_Lin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="edit_power_text1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">#070707</item>
+    </style>
+
+    <style name="edit_power_small_lin">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">right|center</item>
+    </style>
+
+    <style name="edit_power_editText1">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">23dp</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:ems">10</item>
+        <item name="android:background">@drawable/rectangle_shape</item>
+    </style>
+
+    <style name="edit_power_tv2">
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+</resources>

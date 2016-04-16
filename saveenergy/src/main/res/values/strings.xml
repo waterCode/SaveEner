@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">SaveEnergy</string>
+    <string name="action_settings">功耗显示</string>
+    <string name="energy_setting">功率设置</string>
+    <string name="open_one">open_one</string>
+    <string name="off_one">off_one</string>
+    <string name="thime_name">智能Wifi控制端界面</string>
+    <string name="main_setting">main</string>
+    <string name="time_setting">时间设置</string>
+</resources>

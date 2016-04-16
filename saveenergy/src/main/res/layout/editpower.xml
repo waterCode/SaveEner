@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbarbayout"></include>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关1功率"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/power1"
+                style="@style/edit_power_editText1" />
+            <TextView
+                android:text="KW/h"
+                style="@style/edit_power_tv2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关2功率"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/power2"
+                style="@style/edit_power_editText1" />
+            <TextView
+                android:text="KW/h"
+                style="@style/edit_power_tv2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关3功率"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/power3"
+                style="@style/edit_power_editText1" />
+            <TextView
+                android:text="KW/h"
+                style="@style/edit_power_tv2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关4功率"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/power4"
+                style="@style/edit_power_editText1" />
+            <TextView
+                android:text="KW/h"
+                style="@style/edit_power_tv2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <Button
+            android:id="@+id/one_key_set"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="一键设置"/>
+    </LinearLayout>
+</LinearLayout>

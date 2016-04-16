@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minHeight="60dp"
+    android:divider="#1b0606">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/wifi"
+            style="@style/wifiImage_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="开关1"
+            style="@style/switch_style" />
+
+        <ToggleButton
+            android:id="@+id/switch_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ios_button_style" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/wifi"
+            style="@style/wifiImage_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="开关2"
+            style="@style/switch_style" />
+        <ToggleButton
+            android:id="@+id/switch_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ios_button_style" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/wifi"
+            style="@style/wifiImage_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="开关3"
+            style="@style/switch_style" />
+        <ToggleButton
+            android:id="@+id/switch_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ios_button_style" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@drawable/wifi"
+            style="@style/wifiImage_style" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="开关4"
+            style="@style/switch_style" />
+        <ToggleButton
+            android:id="@+id/switch_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ios_button_style" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+

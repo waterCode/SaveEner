@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:padding="16dp">
+
+
+
+<android.support.design.widget.TextInputLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <AutoCompleteTextView
+        android:id="@+id/key"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="key"
+        android:maxLines="1"
+        android:lines="1"
+        android:inputType="text" />
+</android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <AutoCompleteTextView
+            android:id="@+id/did"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="did"
+            android:maxLines="1"
+            android:lines="1"
+            android:inputType="text" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="连接"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
