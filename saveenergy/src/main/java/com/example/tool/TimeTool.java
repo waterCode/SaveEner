@@ -50,7 +50,7 @@ public class TimeTool {
     public static String turnMiuTimeToString(long time){
         long hour=time/(1000*60*60);
         long min = (time-hour*(1000*60*60))/(1000*60);
-        return hour+"H "+min+"M";
+        return hour+":"+min;
     }
 
     public static long turnTimeToMin(long time){

@@ -9,21 +9,39 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
 
-    public final static String loginTabName="loginTab";
+    public static SaveEnergyDataBaseHelper helper;
 
-    public final static String CREATELOGINTABLE="Create table "+loginTabName+"("
-            +"key "+"text not null"
-            +"did"+"text not null"
+    public final static String ALARM_TABLE="alarmTabble";
+    public final static String DbName="save.db";
+    public final static String COL_ALARM_TIME="alarm_time";
+    public final static String COL_SWTICH_NAME="swtich_name";
+    public final static String COL_SWITCH_STATUS="switch_name";
+
+    public final static String CREATE_ALARM_TABLE="CREATE TABLE "+ALARM_TABLE
+            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT "
+            +COL_SWTICH_NAME+" TEXT NOT NULL "
+            +COL_ALARM_TIME+" TEXT NOT NULL "
+            +COL_SWITCH_STATUS+" INTEGER);"
             ;
 
 
 
-    public SaveEnergyDataBaseHelper(Context aContext, String dbName, SQLiteDatabase.CursorFactory factory, int version){
+    private SaveEnergyDataBaseHelper(Context aContext, String dbName, SQLiteDatabase.CursorFactory factory, int version){
         super(aContext,dbName,factory,version);
     }
+
+
+    public synchronized SaveEnergyDataBaseHelper getInstance(Context context) {
+        if (helper == null) {
+            helper = new SaveEnergyDataBaseHelper(context, DbName, null, 1);
+        }
+        return helper;
+    }
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        createLoginTable(db);
     }
 
     @Override
@@ -32,7 +50,8 @@ public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
     }
 
     private void createLoginTable(SQLiteDatabase db){
-        db.execSQL(CREATELOGINTABLE);
+
+        db.execSQL(CREATE_ALARM_TABLE);
     }
 
 }

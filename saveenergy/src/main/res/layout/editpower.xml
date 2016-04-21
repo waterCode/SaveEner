@@ -19,7 +19,7 @@
                 android:id="@+id/power1"
                 style="@style/edit_power_editText1" />
             <TextView
-                android:text="KW/h"
+                android:text="W/h"
                 style="@style/edit_power_tv2" />
         </LinearLayout>
     </LinearLayout>
@@ -33,7 +33,7 @@
                 android:id="@+id/power2"
                 style="@style/edit_power_editText1" />
             <TextView
-                android:text="KW/h"
+                android:text="W/h"
                 style="@style/edit_power_tv2" />
         </LinearLayout>
     </LinearLayout>
@@ -47,7 +47,7 @@
                 android:id="@+id/power3"
                 style="@style/edit_power_editText1" />
             <TextView
-                android:text="KW/h"
+                android:text="W/h"
                 style="@style/edit_power_tv2" />
         </LinearLayout>
     </LinearLayout>
@@ -61,7 +61,7 @@
                 android:id="@+id/power4"
                 style="@style/edit_power_editText1" />
             <TextView
-                android:text="KW/h"
+                android:text="W/h"
                 style="@style/edit_power_tv2" />
         </LinearLayout>
     </LinearLayout>

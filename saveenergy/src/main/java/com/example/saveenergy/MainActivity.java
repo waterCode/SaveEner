@@ -126,11 +126,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            Intent intent = new Intent(this, EnergyCalculateActivity.class);
-            startActivity(intent);
-            return true;
+        switch (id){
+            case R.id.action_settings:
+                Intent intent = new Intent(this, EnergyCalculateActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.time_setting:
+                Intent intent1=new Intent(this,AlarmShowActivity.class);
+                startActivity(intent1);
         }
+
+
+
 
 
         return super.onOptionsItemSelected(item);
@@ -197,8 +204,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                         Log.d("switchOne","执行");
                                         dataSettingFile.setBoolean(MySharedPerferences.BUTTON1, true);
                                         dataSettingFile.setString(MySharedPerferences.BUTTON1_ON_TIME, TimeTool.getTime());
+                                        Toast.makeText(this,"开关1打开成功",Toast.LENGTH_SHORT).show();
+
                                     }else {
                                         dataSettingFile.setBoolean(MySharedPerferences.BUTTON1, false);
+                                        Toast.makeText(this,"开关1关闭成功",Toast.LENGTH_SHORT).show();
                                     }
                                     break;
 
@@ -208,8 +218,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                        Log.d("switchtwo","执行");
                                        dataSettingFile.setBoolean(MySharedPerferences.BUTTON2, true);
                                        dataSettingFile.setString(MySharedPerferences.BUTTON2_ON_TIME, TimeTool.getTime());
+                                       Toast.makeText(this,"开关2打开成功",Toast.LENGTH_SHORT).show();
                                    }else {
                                        dataSettingFile.setBoolean(MySharedPerferences.BUTTON2, false);
+                                       Toast.makeText(this,"开关2关闭成功",Toast.LENGTH_SHORT).show();
                                    }
                                    break;
 
@@ -218,8 +230,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(isChecked){
                     dataSettingFile.setBoolean(MySharedPerferences.BUTTON3, true);
                     dataSettingFile.setString(MySharedPerferences.BUTTON3_ON_TIME, TimeTool.getTime());
+                    Toast.makeText(this,"开关3打开成功",Toast.LENGTH_SHORT).show();
                 }else {
                     dataSettingFile.setBoolean(MySharedPerferences.BUTTON3, false);
+                    Toast.makeText(this,"开关关闭成功",Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -229,8 +243,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(isChecked){
                     dataSettingFile.setBoolean(MySharedPerferences.BUTTON4, true);
                     dataSettingFile.setString(MySharedPerferences.BUTTON4_ON_TIME, TimeTool.getTime());
+                    Toast.makeText(this,"开关4打开成功",Toast.LENGTH_SHORT).show();
                 }else {
                     dataSettingFile.setBoolean(MySharedPerferences.BUTTON4, false);
+                    Toast.makeText(this,"开关4关闭成功",Toast.LENGTH_SHORT).show();
                 }
                 break;
 

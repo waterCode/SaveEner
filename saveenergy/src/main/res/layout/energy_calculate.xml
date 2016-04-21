@@ -54,7 +54,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0h0Min"
+            android:text="获取中"
             android:id="@+id/hourofswitch_one"
             style="@style/energy_cal_text2" />
     </LinearLayout>
@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0h0Min"
+            android:text="获取中"
             android:id="@+id/hourofswitch_two"
             style="@style/energy_cal_text2" />
     </LinearLayout>
@@ -94,7 +94,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0h0Min"
+            android:text="获取中"
             android:id="@+id/hourofswitch_three"
             style="@style/energy_cal_text2" />
     </LinearLayout>
@@ -114,7 +114,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="0h0Min"
+            android:text="获取中"
             android:id="@+id/hourofswitch_four"
             style="@style/energy_cal_text2" />
     </LinearLayout>

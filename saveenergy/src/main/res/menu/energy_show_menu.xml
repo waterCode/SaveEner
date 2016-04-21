@@ -7,8 +7,16 @@
     <item
         android:id="@+id/energy_setting"
         android:title="@string/energy_setting"
-        android:orderInCategory="100"
-        app:showAsAction="always"></item>
+        android:orderInCategory="100"></item>
+
+    <item
+        android:id="@+id/set_time_zero"
+        android:title="时间清零"></item>
+    <item
+        android:id="@+id/set_energy_zero"
+        android:title="功耗清零"
+        ></item>
+
 
     <item
         android:id="@+id/share"

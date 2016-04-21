@@ -43,6 +43,7 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     DecimalFormat decimalFormat= new DecimalFormat(".00");
                     tvAllEnergy.setText(decimalFormat.format((float) msg.obj)+"KW/h");
                     break;
+                default:break;
 
             }
         }
@@ -88,7 +89,7 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG,"原先的时间"+Long.toString(beforeTime));
                     float power1=dataSettingFile.getFloat(MySharedPerferences.power1,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*diffTime/3600000);
+                    allEnergy+=(power1*(diffTime/3600000/1000));
                     long allTime=diffTime+beforeTime;
                     setMyText(1,allTime);
                     dataSettingFile.setString(MySharedPerferences.BUTTON1_ON_TIME, nowTime_String);
@@ -106,7 +107,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG, "原先的时间" + Long.toString(beforeTime));
                     float power1=dataSettingFile.getFloat(MySharedPerferences.power2,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*diffTime/3600000);
+                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    Log.d(TAG,""+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(2,allTime);
                     dataSettingFile.setString(MySharedPerferences.BUTTON2_ON_TIME, nowTime_String);
@@ -124,7 +126,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG,"原先的时间"+Long.toString(beforeTime));
                     float power1=dataSettingFile.getFloat(MySharedPerferences.power3,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*diffTime/3600000);
+                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    Log.d(TAG,""+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(3,allTime);
                     dataSettingFile.setString(MySharedPerferences.BUTTON3_ON_TIME, nowTime_String);
@@ -143,7 +146,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG, "原先的时间" + Long.toString(beforeTime));
                     float power1=dataSettingFile.getFloat(MySharedPerferences.power1,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*diffTime/3600000);
+                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    Log.d(TAG,""+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(4,allTime);
                     dataSettingFile.setString(MySharedPerferences.BUTTON4_ON_TIME, nowTime_String);
@@ -188,10 +192,32 @@ public class EnergyCalculateActivity extends AppCompatActivity {
             case R.id.share:
                 Bitmap bmp=WechatShare.myShot(this);
                 WechatShare.shareWithPhoto(this,bmp);
-
                 break;
+            case R.id.set_time_zero:setTimeZero();
+                break;
+            case R.id.set_energy_zero:setEnergyZero();
+                break;
+            default:break;
         }
         return true;
+    }
+
+    public void setTimeZero(){
+
+        dataSettingFile.setLong(MySharedPerferences.SWITCH_FIRST_HOUR,0);
+        dataSettingFile.setLong(MySharedPerferences.SWITCH_SECOND_HOUR,0);
+        dataSettingFile.setLong(MySharedPerferences.SWITCH_THIRD_HOUR,0);
+        dataSettingFile.setLong(MySharedPerferences.SWITCH_FOURTH_HOUR,0);
+        setMyText(1,0);
+        setMyText(2,0);
+        setMyText(3,0);
+        setMyText(4,0);
+    }
+
+    public void setEnergyZero(){
+
+        setAllEnergyText(5,0);
+        dataSettingFile.setFloat(MySharedPerferences.ALLENERGY,0);
     }
 
 

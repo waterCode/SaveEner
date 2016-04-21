@@ -4,15 +4,17 @@
     android:layout_height="match_parent">
 
 
-    <android.support.v4.view.ViewPager
+    <ListView
+        android:id="@+id/listView"
         android:layout_width="wrap_content"
-        android:layout_height="350dp">
+        android:layout_height="340dp">
 
-
-    </android.support.v4.view.ViewPager>
-
+    </ListView>
 
     <ImageButton
+        android:id="@+id/add_button"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:src="@mipmap/add_96px"/>
 </LinearLayout>

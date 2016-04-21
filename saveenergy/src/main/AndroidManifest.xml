@@ -16,7 +16,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:label="云排插">
+            android:label="智能排插助手">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,11 @@
             </intent-filter>
         </activity>
 
+    <activity
+        android:name=".AlarmShowActivity"
+        android:theme="@style/AppTheme.NoActionBar">
+
+    </activity>
 
         <activity
         android:name=".EnergyCalculateActivity"
@@ -34,8 +39,13 @@
 
     <activity android:name=".EditPowerActivity"
         android:label="功率编辑"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
+        android:theme="@style/AppTheme.NoActionBar">
+
+    </activity>
+
+
     </application>
+
 
     <meta-data
         android:name="com.google.android.gms.version"
