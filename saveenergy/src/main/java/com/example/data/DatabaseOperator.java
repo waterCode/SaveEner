@@ -13,11 +13,17 @@ public class DatabaseOperator {
     private  SQLiteDatabase dbReader;
 
 
-    public DatabaseOperator(Context aContext, String dbName, SQLiteDatabase.CursorFactory factory, int version){
-        dbHelper = new SaveEnergyDataBaseHelper(aContext,"mydb",factory,version);
+    public DatabaseOperator(Context aContext){
+        dbHelper = SaveEnergyDataBaseHelper.getInstance(aContext);
         dbWriter=dbHelper.getWritableDatabase();
         dbReader=dbHelper.getWritableDatabase();
     }
+
+    public boolean insert(){
+        return true;
+    }
+
+
 
 
 

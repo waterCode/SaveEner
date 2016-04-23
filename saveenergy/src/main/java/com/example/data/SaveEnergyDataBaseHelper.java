@@ -31,7 +31,7 @@ public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
     }
 
 
-    public synchronized SaveEnergyDataBaseHelper getInstance(Context context) {
+    public static synchronized SaveEnergyDataBaseHelper getInstance(Context context) {
         if (helper == null) {
             helper = new SaveEnergyDataBaseHelper(context, DbName, null, 1);
         }

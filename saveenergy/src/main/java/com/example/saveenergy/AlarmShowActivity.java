@@ -1,6 +1,7 @@
 package com.example.saveenergy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.view.View;
@@ -34,7 +35,7 @@ public class AlarmShowActivity extends Activity implements View.OnClickListener 
         listView=(ListView)findViewById(R.id.listView);
         iButton=(ImageButton)findViewById(R.id.add_button);
         iButton.setOnClickListener(this);
-        sList.add("dasf");
+
     }
 
     @Override
@@ -47,7 +48,9 @@ public class AlarmShowActivity extends Activity implements View.OnClickListener 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.add_button:sList.add("haha");
+            case R.id.add_button:
+                Intent intent=new Intent(this,AlarmEditActivity.class);
+                startActivity(intent);
                 Toast.makeText(this,"hasAdd",Toast.LENGTH_SHORT).show();
                 adapter.notifyDataSetChanged();
 
