@@ -8,22 +8,22 @@ import java.util.Date;
  */
 public class Alarm {
 
-    private Date time;
+    private Calendar time;
     private String switchStatus;
     private int whitchSwitch;
 
 
     public Alarm(){
-        time= Calendar.getInstance().getTime();
+        time= Calendar.getInstance();
         switchStatus="on";
-        whitchSwitch=1;
+        whitchSwitch=1;//代表开关
     }
 
     public void setSwitchStatus(String switchStatus) {
         this.switchStatus = switchStatus;
     }
 
-    public void setTime(Date time) {
+    public void setTime(Calendar time) {
         this.time = time;
     }
 
@@ -31,7 +31,7 @@ public class Alarm {
         this.whitchSwitch = whitchSwitch;
     }
 
-    public Date getTime() {
+    public Calendar getAlarmTime() {
         return time;
     }
 

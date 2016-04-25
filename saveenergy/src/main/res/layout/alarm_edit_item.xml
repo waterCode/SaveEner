@@ -17,7 +17,7 @@
             android:layout_centerVertical="true"
             tools:text="目标开关"
             android:textSize="25dp"
-            android:textColor="#050505" />
+            android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/switch_value"
@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:textSize="20dp"
             tools:text="开关1"
-            android:textColor="#050505" />
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

@@ -157,8 +157,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     setMyText(4,beforeTime);
                 }
 
-                    setAllEnergyText(5,allEnergy);
-                    dataSettingFile.setFloat(MySharedPerferences.ALLENERGY,allEnergy);
+                    /*setAllEnergyText(5,allEnergy);
+                    dataSettingFile.setFloat(MySharedPerferences.ALLENERGY,allEnergy);*/
             }
         }).start();
     }

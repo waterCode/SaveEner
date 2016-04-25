@@ -1,41 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minHeight="60dp">
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="10dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         tools:text="7:30"
-        android:id="@+id/time_show"
-        android:textSize="35dp"
-        android:textIsSelectable="false" />
+        android:id="@+id/alarm_show"
+        android:textSize="20dp"
+        android:textColor="@color/white" />
+
 
     <TextView
+        tools:text="开关1"
+        android:id="@+id/alarm_item_whit_swit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time_show"
-        tools:text="开关1"
-        android:id="@+id/textView2"
-        android:textIsSelectable="true" />
-
+        android:layout_below="@id/alarm_show"
+        android:textSize="10dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"/>
 
     <TextView
+        tools:text="on"
+        android:id="@+id/alarm_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        tools:text="on"
-        android:textSize="30dp" />
+        android:textSize="15dp"
+        android:textColor="@color/white" />
 
 </RelativeLayout>
-</LinearLayout>
+
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            tools:text="7:30"
+            android:id="@+id/alarm_show"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            tools:text="on"
+            android:id="@+id/alarm_status"
+            android:textSize="20dp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+
+  <TextView
+      tools:text="开关1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/alarm_item_whit_swit"
+      android:textSize="10dp"
+      android:textColor="@color/black"/>-->
+
+
+
+

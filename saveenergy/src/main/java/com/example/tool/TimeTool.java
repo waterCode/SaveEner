@@ -38,6 +38,12 @@ public class TimeTool {
 
     }
 
+    public static String turnDateToStringonlyTime(Date date){
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        String time;
+        time =format.format(date);
+        return time;
+    }
 
     public static long getDiffTime(Date offTime_date, Date nowTime_date) {
         long offTime=offTime_date.getTime();

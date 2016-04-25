@@ -1,1 +1,1 @@
-include ':app', ':saveenergy', ':mcalarmtest'
+include ':app', ':saveenergy', ':mcalarmtest', ':notesListActivity'

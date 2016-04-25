@@ -15,12 +15,12 @@ public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
     public final static String DbName="save.db";
     public final static String COL_ALARM_TIME="alarm_time";
     public final static String COL_SWTICH_NAME="swtich_name";
-    public final static String COL_SWITCH_STATUS="switch_name";
+    public final static String COL_SWITCH_STATUS="switch_staus";
 
     public final static String CREATE_ALARM_TABLE="CREATE TABLE "+ALARM_TABLE
-            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT "
-            +COL_SWTICH_NAME+" TEXT NOT NULL "
-            +COL_ALARM_TIME+" TEXT NOT NULL "
+            + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+            +COL_SWTICH_NAME+" TEXT NOT NULL, "
+            +COL_ALARM_TIME+" TEXT NOT NULL,"
             +COL_SWITCH_STATUS+" INTEGER);"
             ;
 

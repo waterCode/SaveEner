@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="0KW/h"
+            android:text="13KW/h"
             android:textColor="#ffffff"
             android:textSize="30dp" />
     </LinearLayout>
