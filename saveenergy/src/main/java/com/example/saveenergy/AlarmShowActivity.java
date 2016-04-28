@@ -1,6 +1,7 @@
 package com.example.saveenergy;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -29,7 +30,7 @@ import java.util.ListIterator;
 /**
  * Created by mc on 16-4-17.
  */
-public class AlarmShowActivity extends Activity implements View.OnClickListener,AdapterView.OnItemClickListener{
+public class AlarmShowActivity extends Activity implements View.OnClickListener,AdapterView.OnItemClickListener,AdapterView.OnItemLongClickListener{
 
     ListView listView;
     ArrayList<String> sList=new ArrayList<>();
@@ -45,8 +46,10 @@ public class AlarmShowActivity extends Activity implements View.OnClickListener,
         setContentView(R.layout.alarm_show_view);
         listView=(ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
+        listView.setOnItemLongClickListener(this);
         iButton=(ImageButton)findViewById(R.id.add_button);
         iButton.setOnClickListener(this);
+
 
     }
 
@@ -88,4 +91,15 @@ public class AlarmShowActivity extends Activity implements View.OnClickListener,
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
+
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = new Intent(this,DeleteAlarmActivity.class);
+        startActivity(intent);
+        return false;
+    }
+
+
+
 }

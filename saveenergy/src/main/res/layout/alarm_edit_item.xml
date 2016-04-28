@@ -15,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            tools:textColor="@color/black"
             tools:text="目标开关"
             android:textSize="25dp"
             android:textColor="@color/white"/>
@@ -27,7 +28,8 @@
             android:layout_centerVertical="true"
             android:textSize="20dp"
             tools:text="开关1"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            tools:textColor="@color/black"/>
 
     </RelativeLayout>
 

@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/check_48px_white"
-                android:background="#00000000" />
+                android:background="@color/transparent" />
         </LinearLayout>
         <TimePicker
             android:layout_gravity="center_horizontal"
@@ -47,6 +47,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:timePickerMode="spinner"
+
             />
 
 

@@ -17,19 +17,19 @@ import com.example.saveenergy.R;
 public class AlarmReciever extends BroadcastReceiver {
     private String TAG="AlarmReciever";
     private Context mContext;
-    private String content="开关1打开";
+    DatabaseOperator databaseOperator;
     Alarm alarm;
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.d(TAG,"alarmReciever get");
         mContext=context;
-        getAlarmInfo();
-        sentNotification();
-
-
         int id =intent.getIntExtra("_id",-1);
+        databaseOperator = new DatabaseOperator(context);
+        alarm=databaseOperator.queryAlarmWithId(id);
+        sentNotification();//发送通知
+
+
         if (id!=-1){
-            DatabaseOperator databaseOperator = new DatabaseOperator(context);
             databaseOperator.delete(id);
         }else {
 
@@ -38,6 +38,13 @@ public class AlarmReciever extends BroadcastReceiver {
 
     public void sentNotification(){
         NotificationManager notificationManager=(NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
+        String status;
+        if ((alarm.getSwitchStatus().equals("on"))){
+            status="已经打开";
+        }else {
+            status="已经关闭";
+        }
+        String content ="开关"+alarm.getWhitchSwitch()+status;
         Notification notification=new Notification.Builder(mContext)
                 .setContentTitle("定时开关通知")
                 .setContentText(content)
@@ -47,10 +54,7 @@ public class AlarmReciever extends BroadcastReceiver {
 
     }
 
-    private void getAlarmInfo(){
-        alarm=new Alarm();
 
-    }
 
 
 

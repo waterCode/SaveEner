@@ -58,17 +58,18 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
         cacelEditAlarm.setOnClickListener(this);
 
         TimePicker timePicker=(TimePicker)findViewById(R.id.timePicker);
+        timePicker.setIs24HourView(true);
         timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker timePicker, int hourOfDay, int minuite) {
                 Calendar time =alarm.getAlarmTime();
 
-                time.set(Calendar.HOUR,hourOfDay);
+                time.set(Calendar.HOUR_OF_DAY,hourOfDay);
                 time.set(Calendar.MINUTE,minuite);
                 time.set(Calendar.SECOND,0);
-               /*if(time.before(Calendar.getInstance())){
+               if(time.before(Calendar.getInstance())){
                     time.add(Calendar.DAY_OF_MONTH,1);
-                }*/
+                }
             }
         });
 
@@ -105,7 +106,7 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
                 .setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        alarm.setWhitchSwitch(i);
+                        alarm.setWhitchSwitch(i+1);
                         setDataList();
                         simpleAdapter.notifyDataSetChanged();
                     }

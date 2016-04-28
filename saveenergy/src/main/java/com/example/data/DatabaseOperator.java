@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.Model.Alarm;
+
 /**
  * Created by mc on 2016/3/30.
  */
@@ -12,13 +14,13 @@ public class DatabaseOperator {
 
    private SaveEnergyDataBaseHelper dbHelper;
     private SQLiteDatabase dbWriter;
-    private  SQLiteDatabase dbReader;
+
 
 
     public DatabaseOperator(Context aContext){
         dbHelper = SaveEnergyDataBaseHelper.getInstance(aContext);
         dbWriter=dbHelper.getWritableDatabase();
-        dbReader=dbHelper.getWritableDatabase();
+
     }
 
     /*
@@ -33,7 +35,7 @@ public class DatabaseOperator {
 通过时间来获得存在数据库的闹钟id
  */
     public int getAlarmId(String time){
-        String QUIRY_ALARM_ID="SELECT *"
+        String QUIRY_ALARM_ID="SELECT _id,"+SaveEnergyDataBaseHelper.COL_ALARM_TIME
                 +" FROM "+SaveEnergyDataBaseHelper.ALARM_TABLE+" WHERE "
                 +SaveEnergyDataBaseHelper.COL_ALARM_TIME+"= '"+time+"'";
         Cursor cursor = dbWriter.rawQuery(QUIRY_ALARM_ID,null);
@@ -50,4 +52,17 @@ public class DatabaseOperator {
     }
 
 
+    public Alarm queryAlarmWithId(int id){
+        Alarm alarm=new Alarm();
+        String QUERY_ALARMINFO="SELECT * FROM "
+                +SaveEnergyDataBaseHelper.ALARM_TABLE+" WHERE "
+                +"_id='"+String.valueOf(id)+"'";
+        Cursor cursor = dbWriter.rawQuery(QUERY_ALARMINFO,null);
+        while (cursor.moveToNext()){
+            alarm.setWhitchSwitch(Integer.parseInt(String.valueOf(cursor.getString(1).charAt(2))));
+            alarm.setSwitchStatus(cursor.getString(3));
+            return alarm;
+        }
+        return alarm;
+    }
 }

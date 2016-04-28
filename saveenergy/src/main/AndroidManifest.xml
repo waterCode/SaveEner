@@ -48,6 +48,8 @@
         android:label="时间设置">
     </activity>
 
+        <activity android:name=".DeleteAlarmActivity"
+            ></activity>
         <receiver
             android:name="com.example.Model.AlarmReciever">
         </receiver>
