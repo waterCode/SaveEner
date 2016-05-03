@@ -11,9 +11,16 @@
                 android:title="@string/action_settings"
                 />
             <item
-                android:id="@+id/time_setting"
-                android:title="@string/time_setting"
+                android:id="@+id/edit_switch_name"
+                android:title="@string/edit_switch_name"
+                />
 
+            <item
+                android:id="@+id/time_setting"
+                android:orderInCategory="90"
+                android:title="@string/time_setting"
+                android:icon="@mipmap/alarm_64px"
+                app:showAsAction="always"
                 />
 
 

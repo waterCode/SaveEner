@@ -41,7 +41,6 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
     private List<Map<String,String>> datalist;
     private Map<String,String> map;
     private SimpleAdapter simpleAdapter;
-
     Alarm alarm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,7 +105,7 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
                 .setItems(items, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        alarm.setWhitchSwitch(i+1);
+                        alarm.setWhitchSwitch(AlarmEditActivity.this,i+1);
                         setDataList();
                         simpleAdapter.notifyDataSetChanged();
                     }

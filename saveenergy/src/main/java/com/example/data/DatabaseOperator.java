@@ -14,13 +14,14 @@ public class DatabaseOperator {
 
    private SaveEnergyDataBaseHelper dbHelper;
     private SQLiteDatabase dbWriter;
+    private Context mContext;
 
 
 
     public DatabaseOperator(Context aContext){
         dbHelper = SaveEnergyDataBaseHelper.getInstance(aContext);
         dbWriter=dbHelper.getWritableDatabase();
-
+        mContext=aContext;
     }
 
     /*
@@ -59,7 +60,7 @@ public class DatabaseOperator {
                 +"_id='"+String.valueOf(id)+"'";
         Cursor cursor = dbWriter.rawQuery(QUERY_ALARMINFO,null);
         while (cursor.moveToNext()){
-            alarm.setWhitchSwitch(Integer.parseInt(String.valueOf(cursor.getString(1).charAt(2))));
+            alarm.setWhitchSwitch(mContext,Integer.parseInt(String.valueOf(cursor.getString(1).charAt(2))));
             alarm.setSwitchStatus(cursor.getString(3));
             return alarm;
         }

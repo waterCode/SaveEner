@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -47,14 +48,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        dataSettingFile = new MySharedPerferences(this, MySharedPerferences.DATASETTINGFILE);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         keyEdit = (AutoCompleteTextView) findViewById(R.id.key);
         didEdit = (AutoCompleteTextView) findViewById(R.id.did);
         connectButton = (Button) findViewById(R.id.connect);
+
         toggleButton_one = (ToggleButton) findViewById(R.id.switch_one);
         toggleButton_two = (ToggleButton) findViewById(R.id.switch_two);
         toggleButton_three = (ToggleButton) findViewById(R.id.switch_tree);
         toggleButton_four = (ToggleButton) findViewById(R.id.switch_four);
+
+        TextView swtichName1 = (TextView) findViewById(R.id.switch_name1_main);
+        TextView swtichName2 = (TextView) findViewById(R.id.switch_name2_main);
+        TextView swtichName3 = (TextView) findViewById(R.id.switch_name3_main);
+        TextView swtichName4= (TextView) findViewById(R.id.switch_name4_main);
+
+        swtichName1.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME1,"开关1"));
+        swtichName2.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME2,"开关2"));
+        swtichName3.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME3,"开关3"));
+        swtichName4.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME4,"开关4"));
         //设置按钮记录
         getButtonStatus();
         toggleButton_one.setOnCheckedChangeListener(this);
@@ -81,11 +95,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         keyEdit.setAdapter(adapter);//设置自动提醒
 
 
+
     }
 
 
+    /**
+     * 获得开关状态，以便初始化化还原上次的开关状态
+     */
     private void getButtonStatus() {
-        dataSettingFile = new MySharedPerferences(this, MySharedPerferences.DATASETTINGFILE);
 
         if (dataSettingFile.getBoolean("button1", false)) {
             toggleButton_one.setChecked(true);
@@ -134,6 +151,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.time_setting:
                 Intent intent1=new Intent(this,AlarmShowActivity.class);
                 startActivity(intent1);
+                return true;
+            case R.id.edit_switch_name:
+                Intent intent2=new Intent(this,EditSwitchNameActivity.class);
+                startActivity(intent2);
+                return true;
         }
 
 
@@ -175,26 +197,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     disConnect();
                 }
                 break;
-
         }
 
     }
 
-    private void controlSwitch(int whichOne, String command) {
-        Map<String, String> paramsMap = new HashMap<String, String>();
-        paramsMap.clear();
-
-
-        Log.d("MainActivity", "case1");
-        paramsMap.put("did", SwitchStatusParams.did);
-        paramsMap.put("key", SwitchStatusParams.key);
-        paramsMap.put("ctrl", "L"+whichOne + command);
-        paramsMap.put("t", "2");
-        HttpConnection.postMes(paramsMap);
 
 
 
-    }
+
+
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -254,14 +265,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void setData(int whichOne, boolean isChecked) {
+    private void setData(int whichOne, boolean isChecked) {
         if (dataSettingFile == null) {
             dataSettingFile = new MySharedPerferences(this, MySharedPerferences.DATASETTINGFILE);
         }
         if (isChecked) {
-            controlSwitch(whichOne, "ON");
+            HttpConnection.controlSwitch(whichOne, "ON");
         } else {
-            controlSwitch(whichOne, "OFF");
+            HttpConnection.controlSwitch(whichOne, "OFF");
         }
     }
 

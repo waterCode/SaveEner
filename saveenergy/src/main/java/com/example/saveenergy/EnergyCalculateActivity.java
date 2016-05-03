@@ -32,6 +32,7 @@ public class EnergyCalculateActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:tvHour1.setText(TimeTool.turnMiuTimeToString((long)msg.obj));
+
                         break;
                 case 2:tvHour2.setText(TimeTool.turnMiuTimeToString((long)msg.obj));
                     break;
@@ -88,8 +89,11 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     long beforeTime=dataSettingFile.getLong(MySharedPerferences.SWITCH_FIRST_HOUR, 0);//获得之前积累的时间
                     Log.d(TAG,"原先的时间"+Long.toString(beforeTime));
                     float power1=dataSettingFile.getFloat(MySharedPerferences.power1,0);
+                    Log.d(TAG,""+power1);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    Log.d("时间差",""+diffTime);
+                    allEnergy+=(power1*diffTime/3600000/1000);
+                    Log.d(TAG,"总功率"+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(1,allTime);
                     dataSettingFile.setString(MySharedPerferences.BUTTON1_ON_TIME, nowTime_String);
@@ -105,9 +109,9 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG,"button2上次打开开关的时间"+onTime_String);
                     long beforeTime=dataSettingFile.getLong(MySharedPerferences.SWITCH_SECOND_HOUR, 0);//获得之前积累的时间
                     Log.d(TAG, "原先的时间" + Long.toString(beforeTime));
-                    float power1=dataSettingFile.getFloat(MySharedPerferences.power2,0);
+                    float power2=dataSettingFile.getFloat(MySharedPerferences.power2,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    allEnergy+=(power2*diffTime/3600000/1000);
                     Log.d(TAG,""+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(2,allTime);
@@ -124,9 +128,10 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG,"button3上次打开开关的时间"+onTime_String);
                     long beforeTime=dataSettingFile.getLong(MySharedPerferences.SWITCH_THIRD_HOUR, 0);//获得之前积累的时间
                     Log.d(TAG,"原先的时间"+Long.toString(beforeTime));
-                    float power1=dataSettingFile.getFloat(MySharedPerferences.power3,0);
+                    float power3=dataSettingFile.getFloat(MySharedPerferences.power3,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    Log.d(TAG,""+diffTime);
+                    allEnergy+=(power3*(diffTime/3600000/1000));
                     Log.d(TAG,""+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(3,allTime);
@@ -144,9 +149,9 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     Log.d(TAG, "button4上次打开开关的时间"+onTime_String);
                     long beforeTime=dataSettingFile.getLong(MySharedPerferences.SWITCH_FOURTH_HOUR, 0);//获得之前积累的时间
                     Log.d(TAG, "原先的时间" + Long.toString(beforeTime));
-                    float power1=dataSettingFile.getFloat(MySharedPerferences.power1,0);
+                    float power4=dataSettingFile.getFloat(MySharedPerferences.power4,0);
                     long diffTime=TimeTool.getDiffTime(onTime_Date, nowTime_Date);//获得最终时间累积
-                    allEnergy+=(power1*(diffTime/3600000/1000));
+                    allEnergy+=(power4*(diffTime/3600000/1000));
                     Log.d(TAG,""+allEnergy);
                     long allTime=diffTime+beforeTime;
                     setMyText(4,allTime);
@@ -157,8 +162,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                     setMyText(4,beforeTime);
                 }
 
-                    /*setAllEnergyText(5,allEnergy);
-                    dataSettingFile.setFloat(MySharedPerferences.ALLENERGY,allEnergy);*/
+                    setAllEnergyText(5,allEnergy);
+                    dataSettingFile.setFloat(MySharedPerferences.ALLENERGY,allEnergy);
             }
         }).start();
     }
@@ -171,7 +176,7 @@ public class EnergyCalculateActivity extends AppCompatActivity {
    public void setMyText(int where,long diffTime){
        Message message=new Message();
        message.what=where;   message.obj=diffTime;
-       Log.d(TAG,"总时间"+Long.toString(diffTime));
+       Log.d(TAG,"总时间"+Float.toString(diffTime));
        handler.sendMessage(message);
    }
 
@@ -195,8 +200,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                 break;
             case R.id.set_time_zero:setTimeZero();
                 break;
-            case R.id.set_energy_zero:setEnergyZero();
-                break;
+            /*case R.id.set_energy_zero:setEnergyZero();
+                break;*/
             default:break;
         }
         return true;

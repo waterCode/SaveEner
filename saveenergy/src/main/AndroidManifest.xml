@@ -2,63 +2,56 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.saveenergy">
 
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" ></uses-permission>
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" ></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" ></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" ></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
-    <uses-permission android:name="android.permission.WAKE_LOCK" ></uses-permission>
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
 
-
-    <application android:allowBackup="true" android:icon="@mipmap/saveicon"
-        android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/saveicon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="智能排插助手">
-
+            android:label="智能排插助手"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-    <activity
-        android:name=".AlarmShowActivity"
-        android:theme="@style/AppTheme.NoActionBar">
-
-    </activity>
-
         <activity
-        android:name=".EnergyCalculateActivity"
-        android:label="功耗显示"
-        android:theme="@style/AppTheme.NoActionBar">
+            android:name=".AlarmShowActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".EnergyCalculateActivity"
+            android:label="功耗显示"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".EditPowerActivity"
+            android:label="功率编辑"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".AlarmEditActivity"
+            android:label="时间设置"></activity>
+        <activity android:name=".DeleteAlarmActivity" />
+
+
+        <receiver android:name="com.example.Model.AlarmReciever"></receiver>
+
+        <activity android:name=".EditSwitchNameActivity"
+            android:label="@string/edit_switch_name"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
-    <activity android:name=".EditPowerActivity"
-        android:label="功率编辑"
-        android:theme="@style/AppTheme.NoActionBar">
-
-    </activity>
-
-    <activity
-        android:name=".AlarmEditActivity"
-        android:label="时间设置">
-    </activity>
-
-        <activity android:name=".DeleteAlarmActivity"
-            ></activity>
-        <receiver
-            android:name="com.example.Model.AlarmReciever">
-        </receiver>
-
     </application>
-
-
-    <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
 
 </manifest>

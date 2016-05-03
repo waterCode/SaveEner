@@ -8,4 +8,5 @@
     <string name="thime_name">智能Wifi控制端界面</string>
     <string name="main_setting">main</string>
     <string name="time_setting">时间设置</string>
+    <string name="edit_switch_name">编辑开关名</string>
 </resources>

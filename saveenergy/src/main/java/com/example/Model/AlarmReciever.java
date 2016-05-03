@@ -9,6 +9,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.data.DatabaseOperator;
+import com.example.data.MySharedPerferences;
+import com.example.http.HttpConnection;
 import com.example.saveenergy.R;
 
 /**
@@ -18,6 +20,7 @@ public class AlarmReciever extends BroadcastReceiver {
     private String TAG="AlarmReciever";
     private Context mContext;
     DatabaseOperator databaseOperator;
+    MySharedPerferences dataSettingFile;
     Alarm alarm;
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -26,6 +29,7 @@ public class AlarmReciever extends BroadcastReceiver {
         int id =intent.getIntExtra("_id",-1);
         databaseOperator = new DatabaseOperator(context);
         alarm=databaseOperator.queryAlarmWithId(id);
+        setMessToSwitch();
         sentNotification();//发送通知
 
 
@@ -36,6 +40,14 @@ public class AlarmReciever extends BroadcastReceiver {
         }
     }
 
+
+    private  void setMessToSwitch(){
+        if (alarm.getSwitchStatus().equals("on")){
+            setData(alarm.getWhitchSwitch(),true);
+        }else {
+            setData(alarm.getWhitchSwitch(),false);
+        }
+    }
     public void sentNotification(){
         NotificationManager notificationManager=(NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
         String status;
@@ -54,7 +66,16 @@ public class AlarmReciever extends BroadcastReceiver {
 
     }
 
-
+    private void setData(int whichOne, boolean isChecked) {
+        if (dataSettingFile == null) {
+            dataSettingFile = new MySharedPerferences(mContext, MySharedPerferences.DATASETTINGFILE);
+        }
+        if (isChecked) {
+            HttpConnection.controlSwitch(whichOne, "ON");
+        } else {
+            HttpConnection.controlSwitch(whichOne, "OFF");
+        }
+    }
 
 
 

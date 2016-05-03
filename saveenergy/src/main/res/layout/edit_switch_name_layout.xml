@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.saveenergy.EditSwitchNameActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/toolbarbayout"></include>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关1名称"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/switch_name1"
+                style="@style/edit_switch_name" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关2名称"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/switch_name2"
+                style="@style/edit_switch_name" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关3名称"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/switch_name3"
+                style="@style/edit_switch_name" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout style="@style/edit_acti_Lin">
+        <TextView
+            android:text="开关4名称"
+            style="@style/edit_power_text1" />
+        <LinearLayout style="@style/edit_power_small_lin">
+            <EditText
+                android:id="@+id/switch_name4"
+                style="@style/edit_switch_name" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <Button
+            android:id="@+id/one_key_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="一键保存"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

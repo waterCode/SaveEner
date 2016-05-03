@@ -7,15 +7,17 @@
     <item
         android:id="@+id/energy_setting"
         android:title="@string/energy_setting"
-        android:orderInCategory="100"></item>
+        android:orderInCategory="100"
+        />
 
     <item
         android:id="@+id/set_time_zero"
-        android:title="时间清零"></item>
+        android:title="时间清零"
+        />
     <item
         android:id="@+id/set_energy_zero"
         android:title="功耗清零"
-        ></item>
+        />
 
 
     <item

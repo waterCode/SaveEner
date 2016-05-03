@@ -34,7 +34,7 @@ public class MySharedPerferences {
     public static final String BUTTON3="button3";
     public static final String BUTTON4="button4";
 
-    public static final String LASTLOGIN ="LAST_LOGIN_FILE";
+    public static final String LASTLOGIN ="LAST_LOGIN_FILE";//两个file
     public static final String DATASETTINGFILE="DATA_SETTING_FILE";
 
     public static final String BUTTON1_ON_TIME="BUTTON1_ON_TIME";
@@ -43,6 +43,10 @@ public class MySharedPerferences {
     public static final String BUTTON4_ON_TIME="BUTTON4_ON_TIME";
 
 
+    public static final String SWITCH_NAME1="SWITCH_NAME1";
+    public static final String SWITCH_NAME2="SWITCH_NAME2";
+    public static final String SWITCH_NAME3="SWITCH_NAME3";
+    public static final String SWITCH_NAME4="SWITCH_NAME4";
 
     public MySharedPerferences(Context aContext,String name){
         spre =aContext.getSharedPreferences(name,Context.MODE_PRIVATE);

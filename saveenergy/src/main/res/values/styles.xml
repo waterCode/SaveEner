@@ -103,6 +103,15 @@
         <item name="android:background">@drawable/rectangle_shape</item>
     </style>
 
+    <style name="edit_switch_name">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:ems">13</item>
+        <item name="android:background">@drawable/rectangle_shape</item>
+    </style>
+
     <style name="edit_power_tv2">
         <item name="android:layout_marginLeft">5dp</item>
         <item name="android:gravity">right</item>
