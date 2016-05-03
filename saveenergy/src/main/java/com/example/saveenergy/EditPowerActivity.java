@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.data.MySharedPerferences;
 
@@ -38,6 +39,17 @@ public class EditPowerActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onResume() {
         super.onResume();
+
+        TextView swtichName1 = (TextView) findViewById(R.id.power1_name);
+        TextView swtichName2 = (TextView) findViewById(R.id.power2_name);
+        TextView swtichName3 = (TextView) findViewById(R.id.power3_name);
+        TextView swtichName4= (TextView) findViewById(R.id.power4_name);
+
+        swtichName1.setText(energyPowerSetting.getString(MySharedPerferences.SWITCH_NAME1,"开关1"));
+        swtichName2.setText(energyPowerSetting.getString(MySharedPerferences.SWITCH_NAME2,"开关2"));
+        swtichName3.setText(energyPowerSetting.getString(MySharedPerferences.SWITCH_NAME3,"开关3"));
+        swtichName4.setText(energyPowerSetting.getString(MySharedPerferences.SWITCH_NAME4,"开关4"));
+
         power1.setText(String.valueOf(energyPowerSetting.getFloat(MySharedPerferences.power1, 0)));
         power2.setText(String.valueOf(energyPowerSetting.getFloat(MySharedPerferences.power2, 0)));
         power3.setText(String.valueOf(energyPowerSetting.getFloat(MySharedPerferences.power3, 0)));

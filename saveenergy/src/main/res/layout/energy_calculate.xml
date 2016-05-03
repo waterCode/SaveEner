@@ -38,84 +38,92 @@
             android:textSize="30dp" />
     </LinearLayout>
 
-    <LinearLayout style="@style/Energy_cal_small_Lin"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="@drawable/my_divider"
+        android:showDividers="middle"
         >
 
+        <LinearLayout style="@style/Energy_cal_small_Lin">
+            <TextView
+                android:id="@+id/switch_another_name1"
+                android:drawableLeft="@mipmap/energy_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开关1"
+                style="@style/energy_cal_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取中"
+                android:id="@+id/hourofswitch_one"
+                style="@style/energy_cal_text2" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Energy_cal_small_Lin">
 
 
 
-        <TextView
-            android:drawableLeft="@mipmap/energy_calc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开关1"
-            style="@style/energy_cal_text" />
+            <TextView
+                android:id="@+id/switch_another_name2"
+                android:drawableLeft="@mipmap/energy_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开关2"
+                style="@style/energy_cal_text" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="获取中"
-            android:id="@+id/hourofswitch_one"
-            style="@style/energy_cal_text2" />
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/Energy_cal_small_Lin">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取中"
+                android:id="@+id/hourofswitch_two"
+                style="@style/energy_cal_text2" />
+        </LinearLayout>
 
 
-
-        <TextView
-            android:drawableLeft="@mipmap/energy_calc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开关2"
-            style="@style/energy_cal_text" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="获取中"
-            android:id="@+id/hourofswitch_two"
-            style="@style/energy_cal_text2" />
-    </LinearLayout>
+        <LinearLayout
+            style="@style/Energy_cal_small_Lin">
 
 
-    <LinearLayout
-        style="@style/Energy_cal_small_Lin">
+            <TextView
+                android:id="@+id/switch_another_name3"
+                android:drawableLeft="@mipmap/energy_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开关3"
+                style="@style/energy_cal_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取中"
+                android:id="@+id/hourofswitch_three"
+                style="@style/energy_cal_text2" />
+        </LinearLayout>
 
 
-        <TextView
-            android:drawableLeft="@mipmap/energy_calc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开关3"
-            style="@style/energy_cal_text" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="获取中"
-            android:id="@+id/hourofswitch_three"
-            style="@style/energy_cal_text2" />
-    </LinearLayout>
+        <LinearLayout
+            style="@style/Energy_cal_small_Lin">
 
 
-    <LinearLayout
-        style="@style/Energy_cal_small_Lin">
+            <TextView
+                android:id="@+id/switch_another_name4"
+                android:drawableLeft="@mipmap/energy_calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开关4"
+                style="@style/energy_cal_text" />
 
-
-        <TextView
-            android:drawableLeft="@mipmap/energy_calc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="开关4"
-            style="@style/energy_cal_text" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="获取中"
-            android:id="@+id/hourofswitch_four"
-            style="@style/energy_cal_text2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取中"
+                android:id="@+id/hourofswitch_four"
+                style="@style/energy_cal_text2" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

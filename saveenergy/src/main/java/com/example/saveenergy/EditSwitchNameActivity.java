@@ -24,6 +24,7 @@ public class EditSwitchNameActivity extends AppCompatActivity implements View.On
         switchName4 = (EditText) findViewById(R.id.switch_name4);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         Button save = (Button) findViewById(R.id.one_key_save);
         save.setOnClickListener(this);
 

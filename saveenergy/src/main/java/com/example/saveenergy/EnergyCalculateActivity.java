@@ -68,6 +68,17 @@ public class EnergyCalculateActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
+
+        TextView swtichName1 = (TextView) findViewById(R.id.switch_another_name1);
+        TextView swtichName2 = (TextView) findViewById(R.id.switch_another_name2);
+        TextView swtichName3 = (TextView) findViewById(R.id.switch_another_name3);
+        TextView swtichName4= (TextView) findViewById(R.id.switch_another_name4);
+
+        swtichName1.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME1,"开关1"));
+        swtichName2.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME2,"开关2"));
+        swtichName3.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME3,"开关3"));
+        swtichName4.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME4,"开关4"));
         updateTime();
         super.onResume();
     }

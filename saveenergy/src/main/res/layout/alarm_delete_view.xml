@@ -18,6 +18,7 @@
         android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/calcel_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:src="@mipmap/cross_48px_white"

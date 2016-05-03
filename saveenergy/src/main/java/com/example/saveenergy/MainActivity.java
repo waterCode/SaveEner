@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
+    String TAG="MainActivity";
     Button connectButton;
     ToggleButton toggleButton_one, toggleButton_two, toggleButton_three, toggleButton_four;
     AutoCompleteTextView keyEdit, didEdit;
@@ -59,16 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toggleButton_two = (ToggleButton) findViewById(R.id.switch_two);
         toggleButton_three = (ToggleButton) findViewById(R.id.switch_tree);
         toggleButton_four = (ToggleButton) findViewById(R.id.switch_four);
-
-        TextView swtichName1 = (TextView) findViewById(R.id.switch_name1_main);
-        TextView swtichName2 = (TextView) findViewById(R.id.switch_name2_main);
-        TextView swtichName3 = (TextView) findViewById(R.id.switch_name3_main);
-        TextView swtichName4= (TextView) findViewById(R.id.switch_name4_main);
-
-        swtichName1.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME1,"开关1"));
-        swtichName2.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME2,"开关2"));
-        swtichName3.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME3,"开关3"));
-        swtichName4.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME4,"开关4"));
         //设置按钮记录
         getButtonStatus();
         toggleButton_one.setOnCheckedChangeListener(this);
@@ -79,10 +70,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
     }
 
+    @Override
+    protected void onStart() {
+        Log.d(TAG,"onstart");
+        super.onStart();
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG,"onResume");
+        TextView swtichName1 = (TextView) findViewById(R.id.switch_name1_main);
+        TextView swtichName2 = (TextView) findViewById(R.id.switch_name2_main);
+        TextView swtichName3 = (TextView) findViewById(R.id.switch_name3_main);
+        TextView swtichName4= (TextView) findViewById(R.id.switch_name4_main);
+
+        swtichName1.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME1,"开关1"));
+        swtichName2.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME2,"开关2"));
+        swtichName3.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME3,"开关3"));
+        swtichName4.setText(dataSettingFile.getString(MySharedPerferences.SWITCH_NAME4,"开关4"));
+
         lastLoginFile = new MySharedPerferences(this, MySharedPerferences.LASTLOGIN);
         String tKey, tDid;
         tKey = lastLoginFile.getString(MySharedPerferences.LAST_COUNT, "");//获得最后一次登录账号

@@ -27,6 +27,13 @@ public class DeleteAlarmActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_delete_view);
+        ImageButton button = (ImageButton) findViewById(R.id.calcel_delete);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         listView = (ListView)findViewById(R.id.delete_alarm_list);
         initData();

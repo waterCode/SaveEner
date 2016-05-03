@@ -12,6 +12,7 @@
 
     <LinearLayout style="@style/edit_acti_Lin">
         <TextView
+            android:id="@+id/power1_name"
             android:text="开关1功率"
             style="@style/edit_power_text1" />
         <LinearLayout style="@style/edit_power_small_lin">
@@ -26,6 +27,7 @@
 
     <LinearLayout style="@style/edit_acti_Lin">
         <TextView
+            android:id="@+id/power2_name"
             android:text="开关2功率"
             style="@style/edit_power_text1" />
         <LinearLayout style="@style/edit_power_small_lin">
@@ -40,6 +42,7 @@
 
     <LinearLayout style="@style/edit_acti_Lin">
         <TextView
+            android:id="@+id/power3_name"
             android:text="开关3功率"
             style="@style/edit_power_text1" />
         <LinearLayout style="@style/edit_power_small_lin">
@@ -54,6 +57,7 @@
 
     <LinearLayout style="@style/edit_acti_Lin">
         <TextView
+            android:id="@+id/power4_name"
             android:text="开关4功率"
             style="@style/edit_power_text1" />
         <LinearLayout style="@style/edit_power_small_lin">

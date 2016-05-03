@@ -19,7 +19,7 @@
                 android:id="@+id/time_setting"
                 android:orderInCategory="90"
                 android:title="@string/time_setting"
-                android:icon="@mipmap/alarm_64px"
+                android:icon="@mipmap/alarm_50px"
                 app:showAsAction="always"
                 />
 

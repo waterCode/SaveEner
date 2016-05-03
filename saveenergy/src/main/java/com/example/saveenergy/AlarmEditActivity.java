@@ -21,6 +21,7 @@ import android.widget.TimePicker;
 import com.example.Model.Alarm;
 import com.example.Model.AlarmReciever;
 import com.example.data.DatabaseOperator;
+import com.example.data.MySharedPerferences;
 import com.example.data.SaveEnergyDataBaseHelper;
 import com.example.tool.TimeTool;
 
@@ -41,13 +42,17 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
     private List<Map<String,String>> datalist;
     private Map<String,String> map;
     private SimpleAdapter simpleAdapter;
+    private MySharedPerferences dataFile;
     Alarm alarm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.alarm_edit);
+
+        dataFile = new MySharedPerferences(this,MySharedPerferences.DATASETTINGFILE);
         alarm=new Alarm();
+        alarm.setWhitchSwitch(AlarmEditActivity.this,1);//为了开关名和设置的同步
         datalist=new ArrayList<Map<String, String>>();
 
         ImageButton saveAlarm=(ImageButton)findViewById(R.id.save_alarm);
@@ -90,7 +95,7 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
         datalist.clear();
         map = new HashMap<String, String>();
         map.put("name","目标开关");
-        map.put("value","开关"+alarm.getWhitchSwitch());
+        map.put("value",alarm.getSwicthName());
         datalist.add(map);
         map = new HashMap<String, String>();
         map.put("name","开关需求");
@@ -99,7 +104,12 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
 
     }
     private void selectSwitchDialog(){
-        String[] items=new String[]{"开关1","开关2","开关3","开关4"};
+        String name1,name2,name3,name4;
+        name1=dataFile.getString(MySharedPerferences.SWITCH_NAME1,"开关1");
+        name2=dataFile.getString(MySharedPerferences.SWITCH_NAME2,"开关2");
+        name3=dataFile.getString(MySharedPerferences.SWITCH_NAME3,"开关3");
+        name4=dataFile.getString(MySharedPerferences.SWITCH_NAME4,"开关4");
+        String[] items=new String[]{name1,name2,name3,name4};
         AlertDialog.Builder dialog= new AlertDialog.Builder(this)
                 .setTitle("开关选择")
                 .setItems(items, new DialogInterface.OnClickListener() {
@@ -158,10 +168,11 @@ public class AlarmEditActivity extends Activity implements AdapterView.OnItemCli
     private void saveAlarm(){
         String time=TimeTool.turnDateToStringonlyTime(alarm.getAlarmTime().getTime());
         String logTime=TimeTool.turnDateToString(alarm.getAlarmTime().getTime());
-        ContentValues values =new ContentValues(3);
+        ContentValues values =new ContentValues(4);
         values.put(SaveEnergyDataBaseHelper.COL_SWTICH_NAME,"开关"+alarm.getWhitchSwitch());
         values.put(SaveEnergyDataBaseHelper.COL_SWITCH_STATUS,alarm.getSwitchStatus());
         values.put(SaveEnergyDataBaseHelper.COL_ALARM_TIME,time);
+        values.put(SaveEnergyDataBaseHelper.COL_ANOTHER_NAME,alarm.getSwicthName());
         DatabaseOperator dbOperator=new DatabaseOperator(this);
         dbOperator.insert(values);
 

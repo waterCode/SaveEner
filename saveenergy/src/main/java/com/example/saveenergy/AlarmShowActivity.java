@@ -59,7 +59,7 @@ public class AlarmShowActivity extends Activity implements View.OnClickListener,
         SaveEnergyDataBaseHelper helper=SaveEnergyDataBaseHelper.getInstance(this);
         wb = helper.getWritableDatabase();
         mCursor = wb.query(SaveEnergyDataBaseHelper.ALARM_TABLE,null,null,null,null,null,null);
-        String[] colums = new String[]{SaveEnergyDataBaseHelper.COL_ALARM_TIME,SaveEnergyDataBaseHelper.COL_SWTICH_NAME,
+        String[] colums = new String[]{SaveEnergyDataBaseHelper.COL_ALARM_TIME,SaveEnergyDataBaseHelper.COL_ANOTHER_NAME,
                             SaveEnergyDataBaseHelper.COL_SWITCH_STATUS};
         int[] layouId=new int[]{R.id.alarm_show,R.id.alarm_item_whit_swit,R.id.alarm_status};
         cursorAdapter=new SimpleCursorAdapter(this,R.layout.alarm_item,mCursor,colums,layouId, CursorAdapter.FLAG_AUTO_REQUERY);

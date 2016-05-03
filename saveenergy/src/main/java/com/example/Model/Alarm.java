@@ -44,6 +44,11 @@ public class Alarm {
         }
     }
 
+
+    public String getSwicthName() {
+        return swicthName;
+    }
+
     public Calendar getAlarmTime() {
         return time;
     }

@@ -16,6 +16,7 @@ public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
     public final static String COL_ALARM_TIME="alarm_time";
     public final static String COL_SWTICH_NAME="swtich_name";
     public final static String COL_SWITCH_STATUS="switch_staus";
+    public final static String COL_ANOTHER_NAME="another_name";
 
     public final static String CREATE_ALARM_TABLE="CREATE TABLE "+ALARM_TABLE
             + "(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -33,7 +34,7 @@ public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
 
     public static synchronized SaveEnergyDataBaseHelper getInstance(Context context) {
         if (helper == null) {
-            helper = new SaveEnergyDataBaseHelper(context, DbName, null, 1);
+            helper = new SaveEnergyDataBaseHelper(context, DbName, null, 2);
         }
         return helper;
     }
@@ -46,7 +47,9 @@ public class SaveEnergyDataBaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        if(oldVersion<=1){
+            db.execSQL("ALTER TABLE "+ALARM_TABLE+" ADD COLUMN "+COL_ANOTHER_NAME+" TEXT ");
+        }
     }
 
     private void createLoginTable(SQLiteDatabase db){
