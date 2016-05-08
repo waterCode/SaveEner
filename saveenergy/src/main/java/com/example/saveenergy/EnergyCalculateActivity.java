@@ -211,8 +211,8 @@ public class EnergyCalculateActivity extends AppCompatActivity {
                 break;
             case R.id.set_time_zero:setTimeZero();
                 break;
-            /*case R.id.set_energy_zero:setEnergyZero();
-                break;*/
+            case R.id.set_energy_zero:setEnergyZero();
+                break;
             default:break;
         }
         return true;
